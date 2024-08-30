@@ -6,7 +6,10 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [
-    build(),
+    build({
+      entry: "src/index.ts",
+      emptyOutDir: true,
+    }),
     devServer({
       adapter,
       entry: "src/index.ts",
