@@ -1,5 +1,9 @@
 {
-  "name": "discord-serverless-bot",
+  "name": "carbon-bot",
+  "description": "A simple and serverless Discord video downloader bot",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Podter",
   "type": "module",
   "scripts": {
     "dev": "vite",

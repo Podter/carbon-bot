@@ -10,8 +10,8 @@ export const About = {
   async execute() {
     const embed = new EmbedBuilder()
       .setColor(0xffffff)
-      .setTitle("discord-serverless-bot")
-      .setURL("https://github.com/Podter/discord-serverless-bot")
+      .setTitle("Carbon")
+      .setURL("https://github.com/Podter/carbon-bot")
       .setAuthor({
         name: "About",
       })
