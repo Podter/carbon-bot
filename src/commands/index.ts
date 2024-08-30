@@ -1,4 +1,5 @@
+import { About } from "./about";
 import { Download } from "./download";
 import { Ping } from "./ping";
 
-export const appCommands = [Download, Ping];
+export const appCommands = [About, Download, Ping];
