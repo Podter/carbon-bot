@@ -8,7 +8,7 @@ const app = new Hono<{ Bindings: Bindings }>();
 
 app.use(middleware);
 
-app.post("/", async (c) => {
+app.post("/interactions", async (c) => {
   const { type } = await c.req.json<{ type: InteractionType }>();
 
   switch (type) {
