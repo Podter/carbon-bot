@@ -5,17 +5,17 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "wrangler pages dev",
-    "deploy": "$npm_execpath run build && wrangler pages deploy"
+    "deploy": "wrangler pages deploy"
   },
   "dependencies": {
     "hono": "^4.5.9"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240529.0",
+    "@cloudflare/workers-types": "^4.20240821.1",
     "@hono/vite-cloudflare-pages": "^0.4.2",
-    "@hono/vite-dev-server": "^0.15.1",
-    "vite": "^5.2.12",
-    "wrangler": "^3.57.2"
+    "@hono/vite-dev-server": "^0.15.2",
+    "vite": "^5.4.2",
+    "wrangler": "^3.73.0"
   },
   "packageManager": "pnpm@9.7.0+sha512.dc09430156b427f5ecfc79888899e1c39d2d690f004be70e05230b72cb173d96839587545d09429b55ac3c429c801b4dc3c0e002f653830a420fa2dd4e3cf9cf"
 }
