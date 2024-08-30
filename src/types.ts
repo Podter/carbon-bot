@@ -20,7 +20,7 @@ export interface Command {
     | SlashCommandBuilder
     | SlashCommandOptionsOnlyBuilder
     | SlashCommandSubcommandsOnlyBuilder;
-  execute: (c: Context) => Awaitable<CommandResponse>;
+  execute: (c: Context<{ Bindings: Bindings }>) => Awaitable<CommandResponse>;
 }
 
 export interface CommandResponse {
