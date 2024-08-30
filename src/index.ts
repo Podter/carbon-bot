@@ -4,7 +4,7 @@ import { REST } from "@discordjs/rest";
 import { Routes } from "discord-api-types/v10";
 import { InteractionResponseType, InteractionType } from "discord-interactions";
 
-import type { Bindings, Command } from "./types";
+import type { Bindings, Command, CommandResponse } from "./types";
 import { appCommands } from "~/commands";
 import { middleware } from "./middleware";
 
@@ -31,15 +31,12 @@ app.post("/interactions", middleware, async (c) => {
           data: {
             content: "Unknown command",
           },
-        });
+        } satisfies CommandResponse);
       }
 
       try {
         const result = await command.execute(c);
-        return c.json({
-          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-          data: result,
-        });
+        return c.json(result);
       } catch {
         return c.json({
           type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
@@ -47,7 +44,7 @@ app.post("/interactions", middleware, async (c) => {
             content:
               "An error occurred while executing the command. Please try again later.",
           },
-        });
+        } satisfies CommandResponse);
       }
     }
     default:

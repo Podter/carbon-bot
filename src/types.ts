@@ -3,6 +3,7 @@ import type {
   SlashCommandOptionsOnlyBuilder,
   SlashCommandSubcommandsOnlyBuilder,
 } from "@discordjs/builders";
+import type { InteractionResponseType } from "discord-interactions";
 import type { Context } from "hono";
 
 export type Awaitable<T> = PromiseLike<T> | T;
@@ -19,5 +20,10 @@ export interface Command {
     | SlashCommandBuilder
     | SlashCommandOptionsOnlyBuilder
     | SlashCommandSubcommandsOnlyBuilder;
-  execute: (c: Context) => Awaitable<unknown>;
+  execute: (c: Context) => Awaitable<CommandResponse>;
+}
+
+export interface CommandResponse {
+  type: InteractionResponseType;
+  data: unknown;
 }
