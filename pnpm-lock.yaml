@@ -27,6 +27,9 @@ importers:
       '@ianvs/prettier-plugin-sort-imports':
         specifier: ^4.3.1
         version: 4.3.1(prettier@3.3.3)
+      '@types/node':
+        specifier: ^22.5.1
+        version: 22.5.1
       eslint:
         specifier: ^9.9.1
         version: 9.9.1
