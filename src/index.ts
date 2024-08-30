@@ -56,19 +56,23 @@ app.post("/interactions", middleware, async (c) => {
 app.get("/register-commands", async (c) => {
   const rest = new REST().setToken(c.env.TOKEN);
 
-  const payload = {
-    body: commands.map((command) => command.data.toJSON()),
-  };
-
   if (c.env.DEV_GUILD_ID) {
     await rest.put(
       Routes.applicationGuildCommands(c.env.APPLICATION_ID, c.env.DEV_GUILD_ID),
-      payload,
+      {
+        body: commands.map((command) => command.data.toJSON()),
+      },
     );
   }
 
   if (!c.req.query("devonly")) {
-    await rest.put(Routes.applicationCommands(c.env.APPLICATION_ID), payload);
+    await rest.put(Routes.applicationCommands(c.env.APPLICATION_ID), {
+      body: commands.map((command) => ({
+        ...command.data.toJSON(),
+        integration_types: [1],
+        contexts: [0, 1, 2],
+      })),
+    });
   }
 
   return c.json({ message: "Success" });
