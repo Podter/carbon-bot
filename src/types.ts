@@ -13,6 +13,7 @@ export interface Bindings {
   PUBLIC_KEY: string;
   TOKEN: string;
   DEV_GUILD_ID: string;
+  COBALT_API: string;
 }
 
 export interface Command {

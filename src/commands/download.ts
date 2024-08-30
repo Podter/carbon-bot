@@ -48,7 +48,7 @@ async function downloadVideo(
   url: string,
   token: string,
 ) {
-  const res = await fetch("http://localhost:9000/api/json", {
+  const res = await fetch(c.env.COBALT_API, {
     method: "POST",
     headers: {
       Accept: "application/json",
