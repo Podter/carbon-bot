@@ -1,7 +1,7 @@
 import { createMiddleware } from "hono/factory";
 import { verifyKey } from "discord-interactions";
 
-import type { Bindings } from "./bindings";
+import type { Bindings } from "./types";
 
 export const middleware = createMiddleware<{ Bindings: Bindings }>(
   async (c, next) => {

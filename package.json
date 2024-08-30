@@ -10,6 +10,10 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@discordjs/builders": "^1.8.2",
+    "@discordjs/collection": "^2.1.0",
+    "@discordjs/rest": "^2.3.0",
+    "discord-api-types": "^0.37.98",
     "discord-interactions": "^4.1.0",
     "hono": "^4.5.9"
   },
