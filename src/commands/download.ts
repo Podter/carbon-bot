@@ -1,3 +1,4 @@
+import { Buffer } from "node:buffer";
 import type { Context } from "hono";
 import { SlashCommandBuilder } from "@discordjs/builders";
 import { REST } from "@discordjs/rest";
