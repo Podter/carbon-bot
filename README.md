@@ -16,14 +16,13 @@ To deploy this project, just deploy regularly on Cloudflare Pages with the follo
 - `PUBLIC_KEY` Discord application public key. Found in the app's general information page
 - `TOKEN` Discord bot token
 - `DEV_GUILD_ID` Discord server ID for development (optional)
-- `COBALT_API` cobalt.tools API endpoint.
+- `COBALT_API` cobalt.tools API endpoint
 
 You can check `example.dev.vars` for example values.
 
 Then set the application's interaction endpoint to `https://<your-deployment>.pages.dev/interactions` found in the Discord app's general information page.
 
-After that, register the commands by opening `https://<your-deployment>.pages.dev/register-commands` in your browser. It should return success message.
-
+After that, register the commands by opening `https://<your-deployment>.pages.dev/register-commands` in your browser. It should return a JSON response with success message.
 Invite the bot and you're done!
 
 ## Development
